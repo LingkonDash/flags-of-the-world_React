@@ -7,7 +7,7 @@ const Flags = ({apiPromise}) => {
   
 
   return (
-    <div className='grid grid-cols-5 gap-4 border border-green-500 p-4 mt-10'>
+    <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 rounded-2xl p-4 mt-10'>
       {
         data.countries.map(data => <Flag key={data.cca3.cca3} data={data}></Flag>)
       }
