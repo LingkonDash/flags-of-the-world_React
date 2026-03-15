@@ -7,8 +7,8 @@ const Navbar = () => {
   
 
   return (
-    <div>
-      <div className="navbar pl-6 pr-4 bg-base-100 shadow-sm">
+    <nav>
+      <div className="navbar pt-5 pb-6 pl-6 pr-4 bg-base-100 border-4 border-transparent border-b-gray-400">
         <div className="navbar-start">
           <div className='flex justify-center items-center gap-1'>
             <img className='w-9 brightness-125' src={globe} alt="World Glove" />
@@ -60,7 +60,7 @@ const Navbar = () => {
 
         <button className='text-[#00aeff]'><i className="fa-solid fa-magnifying-glass"></i></button>
       </div>
-    </div>
+    </nav>
   );
 };
 
