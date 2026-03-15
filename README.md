@@ -1,16 +1,29 @@
-# React + Vite
+# Flags of the World (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a small **React JS project** where I recreated parts of the website  
+https://www.countryflags.com/.
 
-Currently, two official plugins are available:
+The goal of this project was to practice **React fundamentals**, working with **components**, and **fetching data from an API**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Project Overview
+- Built using **React JS**
+- Displays country flags and basic country information
+- Data is fetched from an **API provided by Programming Hero**
 
-## React Compiler
+## What I Practiced
+- React components
+- Passing props between components
+- Fetching and displaying API data
+- Rendering lists in React
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
+- React JS
+- JavaScript
+- CSS
 
-## Expanding the ESLint configuration
+## Project Purpose
+This project was created as part of my React learning journey to understand how React works when building small real-world style interfaces.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+Learning by building 🚀
