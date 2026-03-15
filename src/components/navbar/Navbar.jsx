@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import globe from "../assets/globe.png";
+import globe from "./globe.png";
 
 const Navbar = () => {
 
@@ -7,7 +7,7 @@ const Navbar = () => {
   
 
   return (
-    <div className='max-w-[1600px] mx-auto'>
+    <div>
       <div className="navbar pl-6 pr-4 bg-base-100 shadow-sm">
         <div className="navbar-start">
           <div className='flex justify-center items-center gap-1'>
