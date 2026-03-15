@@ -19,7 +19,7 @@ The goal of this project was to practice **React fundamentals**, working with **
 ## Tech Stack
 - React JS
 - JavaScript
-- CSS
+- Tailwind CSS
 
 ## Project Purpose
 This project was created as part of my React learning journey to understand how React works when building small real-world style interfaces.
