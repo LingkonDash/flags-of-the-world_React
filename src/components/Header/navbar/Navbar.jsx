@@ -1,23 +1,25 @@
 import React, { useState } from 'react';
-import globe from "./globe.png";
+import logo from "./logo.png";
+import { Search } from 'lucide-react';
 
 const Navbar = () => {
 
   const [dropDown, setDropdown] = useState(false);
-  
+
 
   return (
     <nav>
-      <div className="navbar pt-5 pb-6 pl-6 pr-4 bg-base-100 border-4 border-transparent border-b-gray-400">
+      <div className="navbar py-5 px-4">
         <div className="navbar-start">
-          <div className='flex justify-center items-center gap-1'>
-            <img className='w-9 brightness-125' src={globe} alt="World Glove" />
-            <h1 className='font-semibold text-3xl uppercase'>Counry<span className='text-[#00aeff]'>Flags</span><span className='lowercase'>.com</span></h1>
+          <div className='max-w-[315px] min-w-[280px]'>
+            <a href="#">
+              <img src={logo} alt="Logo" />
+            </a>
           </div>
         </div>
         <div className="navbar-end gap-2 hidden md:flex">
 
-          <label className="input bg-gray-600 h-8">
+          <label className="input shadow-sm focus-within:outline-[#3333] h-8">
             <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <g
                 strokeLinejoin="round"
@@ -33,7 +35,8 @@ const Navbar = () => {
             <input type="search" className="grow" placeholder="Search" />
           </label>
 
-          <button className='text-[#00aeff]'><i className="fa-solid fa-magnifying-glass"></i></button>
+          <Search className='text-[#3075f4] cursor-pointer' />
+
         </div>
         {/* Dropdown button */}
         <button onClick={() => setDropdown(!dropDown)} className='md:hidden navbar-end'>
@@ -41,24 +44,26 @@ const Navbar = () => {
         </button>
       </div>
       {/* dropdown menu */}
-      <div className={`${dropDown ? 'flex' : 'hidden'} justify-center items-center gap-2 pt-5 z-10`}>
-        <label className="input bg-gray-600 h-8">
-          <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <g
-              strokeLinejoin="round"
-              strokeLinecap="round"
-              strokeWidth="2.5"
-              fill="none"
-              stroke="currentColor"
-            >
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="m21 21-4.3-4.3"></path>
-            </g>
-          </svg>
-          <input type="search" className="grow" placeholder="Search" />
-        </label>
+      <div className={`${dropDown ? 'flex' : 'hidden'} md:hidden justify-center items-center gap-2 pb-5 h-8`}>
 
-        <button className='text-[#00aeff]'><i className="fa-solid fa-magnifying-glass"></i></button>
+        <label className="input shadow-sm focus-within:outline-[#3333] h-8">
+            <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <g
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                strokeWidth="2.5"
+                fill="none"
+                stroke="currentColor"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </g>
+            </svg>
+            <input type="search" className="grow" placeholder="Search" />
+          </label>
+
+          <Search className='text-[#3075f4] cursor-pointer' />
+
       </div>
     </nav>
   );
