@@ -9,11 +9,11 @@ const SortNav = () => {
 
   return (
     <section className='flex justify-between items-center'>
-      <button onClick={() => setSort(!sort)} className={`btn text-xl font-normal cursor-pointer py-1 px-3 shadow-none rounded-full border-4 border-transparent lg:hover:border-[#3075f469] bg-base-300 ${sort ? 'border-[#3075f469]' : ''}`}>
+      <button onClick={() => setSort(!sort)} className={`btn text-xl font-normal cursor-pointer py-1 px-3 shadow-none rounded-full border-4 lg:hover:border-[#3075f469] bg-base-300 ${sort ? 'border-[#3075f469]' : 'border-transparent'}`}>
         Sort <ChevronDown />
       </button>
       <div>
-        <button onClick={() => setContinents(!continents)} className={`lg:hidden btn text-xl font-normal cursor-pointer py-1 px-3 shadow-none rounded-full border-4 border-transparent lg:hover:border-[#3075f469] bg-base-300 ${continents ? 'border-[#3075f469]' : ''}`}>
+        <button onClick={() => setContinents(!continents)} className={`lg:hidden btn text-xl font-normal cursor-pointer py-1 px-3 shadow-none rounded-full border-4 lg:hover:border-[#3075f469] bg-base-300 ${continents ? 'border-[#3075f469]' : 'border-transparent'}`}>
           Continents <ChevronDown />
         </button>
         <ul className='hidden lg:flex justify-center items-center gap-5 text-blue-600 font-normal text-xl'>

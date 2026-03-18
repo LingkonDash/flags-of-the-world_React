@@ -32,7 +32,9 @@ const Navbar = () => {
           </div>
 
           <div className='hidden md:flex xl:hidden navbar-end'>
-            <button onClick={() => setDropdownNav(!dropDownNav)} className={`btn bg-base-300 shadow-none cursor-pointer py-1 px-3 rounded-full border-4 border-transparent hover:border-[#3075f469] ${dropDownNav ? 'border-[#3075f469]' : ''}`}>
+
+            {/* Md dropdown btn  */}
+            <button onClick={() => setDropdownNav(!dropDownNav)} className={`btn bg-base-300 shadow-none cursor-pointer py-1 px-3 rounded-full border-4 hover:border-[#3075f469] ${dropDownNav ? 'border-[#3075f469]' : 'border-transparent'}`}>
               {
                 dropDownNav
                   ? <X width={'20px'}></X>
@@ -56,7 +58,7 @@ const Navbar = () => {
 
         {/* Dropdown button */}
         <div className='md:hidden navbar-end'>
-          <button onClick={() => setDropdown(!dropDown)} className={`btn bg-base-300 shadow-none cursor-pointer py-1 px-3 rounded-full border-4 border-transparent ${dropDown ? 'border-[#3075f469]' : ''}`}>
+          <button onClick={() => setDropdown(!dropDown)} className={`btn bg-base-300 shadow-none cursor-pointer py-1 px-3 rounded-full border-4 ${dropDown ? 'border-[#3075f469]' : 'border-transparent'}`}>
             {
               dropDown
                 ? <X width={'20px'}></X>
