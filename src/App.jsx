@@ -16,12 +16,15 @@ function App() {
         <Navbar></Navbar>
       </header>
 
-      <main className='max-w-[1600px] mx-auto'>
-        <SortNav></SortNav>
-
-        <Suspense fallback={<p>Data Loading...</p>}>
-          <Flags apiPromise={apiPromise}></Flags>
-        </Suspense>
+      <main>
+        <section className='max-w-[1600px] mx-auto mt-5 p-5'>
+          <SortNav></SortNav>
+        </section>
+        <section className='max-w-[1600px] mx-auto'>
+          <Suspense fallback={<p>Data Loading...</p>}>
+            <Flags apiPromise={apiPromise}></Flags>
+          </Suspense>
+        </section>
       </main>
 
       <footer className='max-w-[1600px] mx-auto'>

@@ -7,12 +7,12 @@ const Flags = ({apiPromise}) => {
   
 
   return (
-    <section className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 rounded-2xl py-4 px-[60px] mt-10'>
+    <div className="grid grid-cols-[repeat(auto-fill,minmax(160px,1fr))] gap-2 m-2 rounded-xl mt-10">
       {
         data.countries.map(data => <Flag key={data.cca3.cca3} data={data}></Flag>)
       }
       
-    </section>
+    </div>
   );
 };
 
