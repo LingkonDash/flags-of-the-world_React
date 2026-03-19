@@ -12,7 +12,7 @@ function App() {
   return (
     <>
 
-      <header className='sticky top-0 bg-base-300 z-10'>
+      <header className='sticky top-0 bg-base-300 z-20'>
         <Navbar></Navbar>
       </header>
 

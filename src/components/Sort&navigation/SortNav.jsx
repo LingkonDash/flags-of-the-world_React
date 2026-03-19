@@ -1,5 +1,6 @@
 import { ChevronDown } from 'lucide-react';
 import React, { useState } from 'react';
+import Continents from './continent/Continents';
 
 const SortNav = () => {
 
@@ -23,19 +24,18 @@ const SortNav = () => {
       <button onClick={() => setSort(!sort)} className={`btn text-xl font-normal cursor-pointer py-1 px-3 shadow-none rounded-full border-4 lg:hover:border-[#3075f469] bg-base-300 ${sort ? 'border-[#3075f469]' : 'border-transparent'}`}>
         Sort <ChevronDown />
       </button>
-      <div>
+      <div className='relative'>
         <button onClick={() => setContinents(!continents)} className={`lg:hidden btn text-xl font-normal cursor-pointer py-1 px-3 shadow-none rounded-full border-4 lg:hover:border-[#3075f469] bg-base-300 ${continents ? 'border-[#3075f469]' : 'border-transparent'}`}>
           Continents <ChevronDown />
         </button>
-        <ul className='hidden lg:flex justify-center items-center gap-5 text-blue-600 font-normal text-xl'>
-          <li><button onClick={() => handleContinent('Asia')} className={`hover:text-blue-800 cursor-pointer active:scale-95 border-4 bg-base-300 border-transparent ${currentContinent === 'Asia' ? 'border-b-[#3075f469]' : 'border-b-transparent'}`}>Asia</button></li>
-          <li><button onClick={() => handleContinent('Africa')} className={`hover:text-blue-800 cursor-pointer active:scale-95 border-4 bg-base-300 border-transparent ${currentContinent === 'Africa' ? 'border-b-[#3075f469]' : 'border-b-transparent'}`}>Africa</button></li>
-          <li><button onClick={() => handleContinent('northA')} className={`hover:text-blue-800 cursor-pointer active:scale-95 border-4 bg-base-300 border-transparent ${currentContinent === 'northA' ? 'border-b-[#3075f469]' : 'border-b-transparent'}`}>North America</button></li>
-          <li><button onClick={() => handleContinent('southA')} className={`hover:text-blue-800 cursor-pointer active:scale-95 border-4 bg-base-300 border-transparent ${currentContinent === 'southA' ? 'border-b-[#3075f469]' : 'border-b-transparent'}`}>South America</button></li>
-          <li><button onClick={() => handleContinent('Antarctica')} className={`hover:text-blue-800 cursor-pointer active:scale-95 border-4 bg-base-300 border-transparent ${currentContinent === 'Antarctica' ? 'border-b-[#3075f469]' : 'border-b-transparent'}`}>Antarctica</button></li>
-          <li><button onClick={() => handleContinent('Europe')} className={`hover:text-blue-800 cursor-pointer active:scale-95 border-4 bg-base-300 border-transparent ${currentContinent === 'Europe' ? 'border-b-[#3075f469]' : 'border-b-transparent'}`}>Europe</button></li>
-          <li><button onClick={() => handleContinent('Australia')} className={`hover:text-blue-800 cursor-pointer active:scale-95 border-4 bg-base-300 border-transparent ${currentContinent === 'Australia' ? 'border-b-[#3075f469]' : 'border-b-transparent'}`}>Australia</button></li>
-        </ul>
+        {/* Defult continent */}
+        <Continents handleContinent={handleContinent} currentContinent={currentContinent} ulStyle={'hidden lg:flex'}></Continents>
+
+        {
+          <Continents handleContinent={handleContinent} currentContinent={currentContinent} ulStyle={`flex lg:hidden flex-col rounded-lg border-4 border-r-transparent border-[#3075f469] z-10 bg-base-200 py-6 absolute top-12 shadow-md -right-7 left-0 transition-transform duration-300 ${continents ? 'translate-x-0' : ' translate-x-[200px] pointer-events-none'} `}></Continents>
+        }
+
+        
       </div>
     </section>
   );
