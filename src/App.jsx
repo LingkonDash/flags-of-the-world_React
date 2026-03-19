@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import Navbar from './components/navbar/Navbar';
 import SortNav from './components/Sort&navigation/SortNav';
 import Flags from './components/flags/Flags';
+import Skeleton from './components/skeletons/Skeleton';
 
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
         </section>
 
         <section className='max-w-[1600px] mx-auto'>
-          <Suspense fallback={<p>Data Loading...</p>}>
+          <Suspense fallback={<Skeleton></Skeleton>}>
             <Flags apiPromise={apiPromise}></Flags>
           </Suspense>
         </section>

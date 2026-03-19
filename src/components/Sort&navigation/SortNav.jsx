@@ -52,7 +52,7 @@ const SortNav = () => {
         <Continents handleContinent={handleContinent} currentContinent={currentContinent} ulStyle={'hidden lg:flex pr-5'}></Continents>
 
         {
-          <Continents handleContinent={handleContinent} currentContinent={currentContinent} ulStyle={`lg:hidden flex-col rounded-lg border-4 border-[#3075f469] z-10 bg-base-200 py-6 pl-2 absolute top-12 shadow-md -right-7 left-0 transition-transform duration-300 ${continents ? 'translate-x-0' : ' translate-x-[200px] pointer-events-none hidden'}`}></Continents>
+          <Continents handleContinent={handleContinent} currentContinent={currentContinent} ulStyle={`lg:hidden flex-col rounded-lg border-4 border-[#3075f469] z-10 bg-base-200 py-6 pl-2 absolute top-12 shadow-md -right-3 left-0 transition-transform duration-300 ${continents ? 'flex' : 'hidden'}`}></Continents>
         }
 
 
