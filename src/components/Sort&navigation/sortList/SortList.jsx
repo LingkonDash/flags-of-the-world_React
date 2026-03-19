@@ -1,16 +1,16 @@
 import React from 'react';
 
-const SortList = ({handleSort, curSort, ulStyle}) => {
+const SortList = ({ handleSort, curSort, ulStyle }) => {
   return (
-    <ul className={`${ulStyle} rounded-lg border-4 border-[#3075f469] z-10 bg-base-200 py-6 absolute top-12 shadow-md -right-[70px] -left-7 transition-transform duration-300 flex flex-col justify-center items-start pl-5 gap-5 text-blue-600 font-normal text-xl`}>
-      <li><button onClick={() => handleSort('Asia')} className={`hover:text-blue-800 cursor-pointer active:scale-95 border-4 border-transparent ${curSort === 'Asia' ? 'border-b-[#3075f469]' : 'border-b-transparent'}`}>Asia</button></li>
-      <li><button onClick={() => handleSort('Africa')} className={`hover:text-blue-800 cursor-pointer active:scale-95 border-4 border-transparent ${curSort === 'Africa' ? 'border-b-[#3075f469]' : 'border-b-transparent'}`}>Africa</button></li>
-      <li><button onClick={() => handleSort('northA')} className={`hover:text-blue-800 cursor-pointer active:scale-95 border-4 border-transparent ${curSort === 'northA' ? 'border-b-[#3075f469]' : 'border-b-transparent'}`}>North America</button></li>
-      <li><button onClick={() => handleSort('southA')} className={`hover:text-blue-800 cursor-pointer active:scale-95 border-4 border-transparent ${curSort === 'southA' ? 'border-b-[#3075f469]' : 'border-b-transparent'}`}>South America</button></li>
-      <li><button onClick={() => handleSort('Antarctica')} className={`hover:text-blue-800 cursor-pointer active:scale-95 border-4 border-transparent ${curSort === 'Antarctica' ? 'border-b-[#3075f469]' : 'border-b-transparent'}`}>Antarctica</button></li>
-      <li><button onClick={() => handleSort('Europe')} className={`hover:text-blue-800 cursor-pointer active:scale-95 border-4 border-transparent ${curSort === 'Europe' ? 'border-b-[#3075f469]' : 'border-b-transparent'}`}>Europe</button></li>
-      <li><button onClick={() => handleSort('Australia')} className={`hover:text-blue-800 cursor-pointer active:scale-95 border-4 border-transparent ${curSort === 'Australia' ? 'border-b-[#3075f469]' : 'border-b-transparent'}`}>Australia</button></li>
-    </ul>
+    <div className={`${ulStyle} rounded-lg border-4 border-[#3075f469] z-10 bg-base-200 py-6 absolute top-12 shadow-md -right-[85px] -left-7 transition-transform duration-300 px-2 flex flex-col justify-center items-start gap-5 font-normal`}>
+      <button onClick={() => handleSort('Asia')} className={`cursor-pointer active:scale-95 border-4 border-transparent px-2 hover:bg-base-300 w-full text-left ${curSort === 'Asia' ? 'border-b-[#3075f469]' : 'border-b-transparent'}`}>Population ascending</button>
+      <button onClick={() => handleSort('Africa')} className={`cursor-pointer active:scale-95 border-4 border-transparent px-2 hover:bg-base-300 w-full text-left ${curSort === 'Africa' ? 'border-b-[#3075f469]' : 'border-b-transparent'}`}>Population descending</button>
+      <button onClick={() => handleSort('northA')} className={`cursor-pointer active:scale-95 border-4 border-transparent px-2 hover:bg-base-300 w-full text-left ${curSort === 'northA' ? 'border-b-[#3075f469]' : 'border-b-transparent'}`}>Name ascending</button>
+      <button onClick={() => handleSort('southA')} className={`cursor-pointer active:scale-95 border-4 border-transparent px-2 hover:bg-base-300 w-full text-left ${curSort === 'southA' ? 'border-b-[#3075f469]' : 'border-b-transparent'}`}>Name descending</button>
+      <button onClick={() => handleSort('Antarctica')} className={`cursor-pointer active:scale-95 border-4 border-transparent px-2 hover:bg-base-300 w-full text-left ${curSort === 'Antarctica' ? 'border-b-[#3075f469]' : 'border-b-transparent'}`}>Area ascending</button>
+      <button onClick={() => handleSort('Europe')} className={`cursor-pointer active:scale-95 border-4 border-transparent px-2 hover:bg-base-300 w-full text-left ${curSort === 'Europe' ? 'border-b-[#3075f469]' : 'border-b-transparent'}`}>Area Descending</button>
+      <button onClick={() => handleSort('Australia')} className={`cursor-pointer active:scale-95 border-4 border-transparent px-2 hover:bg-base-300 w-full text-left ${curSort === 'Australia' ? 'border-b-[#3075f469]' : 'border-b-transparent'}`}>Density ascending</button>
+    </div>
   );
 };
 

@@ -22,7 +22,7 @@ const Flag = ({ data }) => {
         </div>
 
       </div>
-      <div className={`${modalDisplay ? 'flex' : 'hidden'} fixed z-40 top-1/2 left-1/2 w-full h-full transform -translate-x-1/2 -translate-y-1/2 justify-center items-center backdrop:blur-sm p-4`}>
+      <div className={`${modalDisplay ? 'flex' : 'hidden'} fixed z-40 top-1/2 left-1/2 w-full h-full transform -translate-x-1/2 -translate-y-1/2 justify-center items-center p-4`}>
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
           <div className="relative w-full max-w-2xl overflow-hidden rounded-2xl bg-white shadow-2xl transition-all">
 
