@@ -10,10 +10,66 @@ function App() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true)
   const [defultData, setDefultData] = useState([]);
+  const [defultDataContinent, setDefultDataContinent] = useState([]);
   const [curSort, setCurSort] = useState('');
 
+  // continent data
+  const [currentContinent, setCurrentContinent] = useState('');
 
-// Sorting functions 
+  //handling continent function
+  const handleContinent = (continentName) => {
+
+    if (continentName === 'Asia') {
+
+      const newData = defultData.filter(obj => obj.region.region === 'Asia');
+
+      setData(newData);
+
+      setCurrentContinent('Asia');
+
+    } else if (continentName === 'Africa') {
+
+      const newData = defultData.filter(obj => obj.region.region === 'Africa');
+
+      setData(newData);
+
+      setCurrentContinent('Africa');
+
+    } else if (continentName === 'Americas') {
+
+      const newData = defultData.filter(obj => obj.region.region === 'Americas');
+
+      setData(newData);
+
+      setCurrentContinent('Americas');
+
+    } else if (continentName === 'Oceania') {
+
+      const newData = defultData.filter(obj => obj.region.region === 'Oceania');
+
+      setData(newData);
+
+      setCurrentContinent('Oceania');
+
+    } else if (continentName === 'Europe') {
+
+      const newData = defultData.filter(obj => obj.region.region === 'Europe');
+
+      setData(newData);
+
+      setCurrentContinent('Europe');
+
+    } else if (continentName === 'All') {
+
+      setData(defultDataContinent);
+
+      setCurrentContinent('All');
+
+    }
+  }
+
+
+  // Sorting functions 
   function sorterAscending(arr, path) {
     return [...arr].sort((a, b) => a[path][path] - b[path][path]);
   }
@@ -22,14 +78,14 @@ function App() {
   }
 
   function sorterName(arr, order = "asc") {
-  return [...arr].sort((a, b) => 
-    order === "asc"
-      ? a.name.common.localeCompare(b.name.common)
-      : b.name.common.localeCompare(a.name.common)
-  );
-}
+    return [...arr].sort((a, b) =>
+      order === "asc"
+        ? a.name.common.localeCompare(b.name.common)
+        : b.name.common.localeCompare(a.name.common)
+    );
+  }
 
-
+  // handling sor functions onclick
   const handleSort = (sortName) => {
 
     if (sortName === 'population-up') {
@@ -45,19 +101,19 @@ function App() {
       const newData = sorterDescending(data, 'population')
 
       setData(newData);
-      
+
       setCurSort('population-down')
-      
+
     } else if (sortName === 'name-up') {
-      
+
       const newData = sorterName(data, 'asc')
 
       setData(newData);
-      
+
       setCurSort('name-up')
-      
+
     } else if (sortName === 'name-down') {
-      
+
       const newData = sorterName(data, 'desc')
 
       setData(newData);
@@ -95,6 +151,7 @@ function App() {
       .then(json => {
         setData(json.countries);
         setDefultData(json.countries);
+        setDefultDataContinent(json.countries);
 
         setLoading(false);
 
@@ -112,7 +169,7 @@ function App() {
       <main>
 
         <section className='max-w-[1600px] mx-auto mt-5 p-5'>
-          <SortNav handleSort={handleSort} curSort={curSort}></SortNav>
+          <SortNav handleSort={handleSort} curSort={curSort} handleContinent={handleContinent} currentContinent={currentContinent}></SortNav>
         </section>
 
         <section className='max-w-[1600px] mx-auto'>

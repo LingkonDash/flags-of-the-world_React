@@ -3,21 +3,10 @@ import React, { useState } from 'react';
 import Continents from './continent/Continents';
 import SortList from './sortList/SortList';
 
-const SortNav = ({handleSort, curSort}) => {
+const SortNav = ({handleSort, curSort, handleContinent, currentContinent}) => {
 
   const [continents, setContinents] = useState(false);
-  const [currentContinent, setCurrentContinent] = useState('');
   const [sort, setSort] = useState(false);
-
-  const handleContinent = (continentName) => {
-    if (continentName === 'Asia') setCurrentContinent('Asia');
-    if (continentName === 'Africa') setCurrentContinent('Africa');
-    if (continentName === 'northA') setCurrentContinent('northA');
-    if (continentName === 'southA') setCurrentContinent('southA');
-    if (continentName === 'Antarctica') setCurrentContinent('Antarctica');
-    if (continentName === 'Europe') setCurrentContinent('Europe');
-    if (continentName === 'Australia') setCurrentContinent('Australia');
-  }
 
 
   return (
