@@ -9,7 +9,7 @@ const SortList = ({ handleSort, curSort, ulStyle }) => {
       <button onClick={() => handleSort('name-down')} className={`cursor-pointer active:scale-95 border-4 border-transparent px-2 hover:bg-base-300 w-full text-left ${curSort === 'name-down' ? 'border-b-[#3075f469]' : 'border-b-transparent'}`}>Name descending</button>
       <button onClick={() => handleSort('area-up')} className={`cursor-pointer active:scale-95 border-4 border-transparent px-2 hover:bg-base-300 w-full text-left ${curSort === 'area-up' ? 'border-b-[#3075f469]' : 'border-b-transparent'}`}>Area ascending</button>
       <button onClick={() => handleSort('area-down')} className={`cursor-pointer active:scale-95 border-4 border-transparent px-2 hover:bg-base-300 w-full text-left ${curSort === 'area-down' ? 'border-b-[#3075f469]' : 'border-b-transparent'}`}>Area Descending</button>
-      <button onClick={() => handleSort('density-up')} className={`cursor-pointer active:scale-95 border-4 border-transparent px-2 hover:bg-base-300 w-full text-left ${curSort === 'density-up' ? 'border-b-[#3075f469]' : 'border-b-transparent'}`}>Density ascending</button>
+      <button onClick={() => handleSort('all')} className={`cursor-pointer active:scale-95 border-4 border-transparent px-2 hover:bg-base-300 w-full text-left ${curSort === 'all' ? 'border-b-[#3075f469]' : 'border-b-transparent'}`}>Without sorting</button>
     </div>
   );
 };

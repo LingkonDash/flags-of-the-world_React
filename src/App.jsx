@@ -9,30 +9,98 @@ function App() {
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true)
-
+  const [defultData, setDefultData] = useState([]);
   const [curSort, setCurSort] = useState('');
+
+
+// Sorting functions 
+  function sorterAscending(arr, path) {
+    return [...arr].sort((a, b) => a[path][path] - b[path][path]);
+  }
+  function sorterDescending(arr, path) {
+    return [...arr].sort((a, b) => b[path][path] - a[path][path]);
+  }
+
+  function sorterName(arr, order = "asc") {
+  return [...arr].sort((a, b) => 
+    order === "asc"
+      ? a.name.common.localeCompare(b.name.common)
+      : b.name.common.localeCompare(a.name.common)
+  );
+}
+
 
   const handleSort = (sortName) => {
 
-    if (sortName === 'population-up') setCurSort('population-up');
-    if (sortName === 'population-down') setCurSort('population-down');
-    if (sortName === 'name-up') setCurSort('name-up');
-    if (sortName === 'name-down') setCurSort('name-down');
-    if (sortName === 'area-up') setCurSort('area-up');
-    if (sortName === 'area-down') setCurSort('area-down');
-    if (sortName === 'density-up') setCurSort('density-up');
-    console.log(sortName);
+    if (sortName === 'population-up') {
+
+      const newData = sorterAscending(data, 'population')
+
+      setData(newData);
+
+      setCurSort('population-up')
+
+    } else if (sortName === 'population-down') {
+
+      const newData = sorterDescending(data, 'population')
+
+      setData(newData);
+      
+      setCurSort('population-down')
+      
+    } else if (sortName === 'name-up') {
+      
+      const newData = sorterName(data, 'asc')
+
+      setData(newData);
+      
+      setCurSort('name-up')
+      
+    } else if (sortName === 'name-down') {
+      
+      const newData = sorterName(data, 'desc')
+
+      setData(newData);
+
+      setCurSort('name-down')
+
+    } else if (sortName === 'area-up') {
+
+      const newData = sorterAscending(data, 'area')
+
+      setData(newData);
+
+      setCurSort('area-up')
+
+    } else if (sortName === 'area-down') {
+
+      const newData = sorterDescending(data, 'area')
+
+      setData(newData);
+
+      setCurSort('area-down')
+
+    } else if (sortName === 'all') {
+
+      setData(defultData);
+
+      setCurSort('all')
+
+    }
   }
 
   useEffect(() => {
     fetch('https://openapi.programming-hero.com/api/all')
-    .then(res => res.json())
-    .then(json => {
-      setData(json.countries);
-      setLoading(false);
-      
-    })
+      .then(res => res.json())
+      .then(json => {
+        setData(json.countries);
+        setDefultData(json.countries);
+
+        setLoading(false);
+
+      })
   }, [])
+
 
   return (
     <>
