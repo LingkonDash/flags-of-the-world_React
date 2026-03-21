@@ -6,6 +6,7 @@ import Skeleton from './components/skeletons/Skeleton';
 import About from './components/bottom/About';
 import Bottom from './components/bottom/Bottom';
 import Footer from './components/bottom/Footer';
+import AboutMe from './components/bottom/AboutMe';
 
 
 function App() {
@@ -184,9 +185,15 @@ function App() {
           }
         </section>
 
-        <section className='max-w-[1600px] mx-auto mt-10 p-10 md:p-[60px] lg:p-20'>
+        <section id='blog' className='max-w-[1600px] mx-auto mt-10 p-10 md:p-[60px] lg:p-20'>
 
           <About></About>
+
+        </section>
+
+        <section id='about' className='max-w-[1600px] mx-auto p-10 md:p-[60px] lg:p-20'>
+
+          <AboutMe></AboutMe>
 
         </section>
 
