@@ -3,6 +3,8 @@ import Navbar from './components/navbar/Navbar';
 import SortNav from './components/Sort&navigation/SortNav';
 import Flags from './components/flags/Flags';
 import Skeleton from './components/skeletons/Skeleton';
+import About from './components/about/About';
+import Bottom from './components/about/Bottom';
 
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
 
   //handling continent function
   const handleContinent = (continentName) => {
+
+    setCurSort('');
 
     if (continentName === 'Asia') {
 
@@ -172,17 +176,22 @@ function App() {
           <SortNav handleSort={handleSort} curSort={curSort} handleContinent={handleContinent} currentContinent={currentContinent}></SortNav>
         </section>
 
-        <section className='max-w-[1600px] mx-auto'>
+        {/* <section className='max-w-[1600px] mx-auto'>
 
           {
             loading ? <Skeleton></Skeleton> : <Flags data={data}></Flags>
           }
-          {/* <Suspense fallback={<Skeleton></Skeleton>}>
-            <Flags data={data} noSorted={noSorted} setNosorted={setNosorted}></Flags>
-          </Suspense> */}
+        </section> */}
+
+        <section className='max-w-[1600px] mx-auto mt-10 p-20'>
+
+          <About></About>
+
         </section>
 
-        <section>
+        <section className='bg-blue-500 text-white'>
+
+          <Bottom></Bottom>
 
         </section>
 
