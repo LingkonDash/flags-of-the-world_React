@@ -2,9 +2,9 @@ import React from 'react';
 
 const Bottom = () => {
   return (
-    <div className='max-w-[1600px] mx-auto flex justify-between mt-5 py-6 px-20'>
-      <div className='[&_p]:text-xl [&_p]:w-fit [&_p]:cursor-pointer hover:[&_p]:underline space-y-1'>
-        <h2 className='text-2xl uppercase mb-8'>Continents</h2>
+    <div className='max-w-[1600px] mx-auto flex justify-between mt-5 py-6 px-10 md:px-[60px] lg:px-20 flex-wrap gap-5'>
+      <div className=' [&_p]:w-fit [&_p]:cursor-pointer hover:[&_p]:underline'>
+        <h2 className='text-xl uppercase mb-5'>Continents</h2>
         <p>Flags of the World</p>
         <p>Africa</p>
         <p>Antarctica</p>
@@ -14,8 +14,8 @@ const Bottom = () => {
         <p>Oceania</p>
         <p>South America</p>
       </div>
-      <div className='[&_p]:text-xl [&_p]:w-fit [&_p]:cursor-pointer hover:[&_p]:underline space-y-1'>
-        <h2 className='text-2xl uppercase mb-8'>Downloads</h2>
+      <div className=' [&_p]:w-fit [&_p]:cursor-pointer hover:[&_p]:underline'>
+        <h2 className='text-xl uppercase mb-5'>Downloads</h2>
         <p>Vector overview</p>
         <p>Coloring overview</p>
         <p>Emoji overview</p>
@@ -23,8 +23,8 @@ const Bottom = () => {
         <p>Icons overview</p>
         <p>Image overview</p>
       </div>
-      <div className='[&_p]:text-xl [&_p]:w-fit [&_p]:cursor-pointer hover:[&_p]:underline space-y-1'>
-        <h2 className='text-2xl uppercase mb-8'>U.S. States Downloads</h2>
+      <div className=' [&_p]:w-fit [&_p]:cursor-pointer hover:[&_p]:underline'>
+        <h2 className='text-xl uppercase mb-5'>U.S. States Downloads</h2>
         <p>U.S. States clip art overview</p>
         <p>U.S. States coloring pages overview</p>
         <p>U.S. States emoji overview</p>
@@ -32,8 +32,8 @@ const Bottom = () => {
         <p>U.S. States image overview</p>
         <p>U.S. States vector overview</p>
       </div>
-      <div className='[&_p]:text-xl [&_p]:w-fit [&_p]:cursor-pointer hover:[&_p]:underline space-y-1'>
-        <h2 className='text-2xl uppercase mb-8'>Countries of the World</h2>
+      <div className=' [&_p]:w-fit [&_p]:cursor-pointer hover:[&_p]:underline'>
+        <h2 className='text-xl uppercase mb-5'>Countries of the World</h2>
         <p>African countries</p>
         <p>Asian countries</p>
         <p>European countries</p>

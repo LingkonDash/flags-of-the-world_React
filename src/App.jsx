@@ -3,8 +3,9 @@ import Navbar from './components/navbar/Navbar';
 import SortNav from './components/Sort&navigation/SortNav';
 import Flags from './components/flags/Flags';
 import Skeleton from './components/skeletons/Skeleton';
-import About from './components/about/About';
-import Bottom from './components/about/Bottom';
+import About from './components/bottom/About';
+import Bottom from './components/bottom/Bottom';
+import Footer from './components/bottom/Footer';
 
 
 function App() {
@@ -176,14 +177,14 @@ function App() {
           <SortNav handleSort={handleSort} curSort={curSort} handleContinent={handleContinent} currentContinent={currentContinent}></SortNav>
         </section>
 
-        {/* <section className='max-w-[1600px] mx-auto'>
+        <section className='max-w-[1600px] mx-auto'>
 
           {
             loading ? <Skeleton></Skeleton> : <Flags data={data}></Flags>
           }
-        </section> */}
+        </section>
 
-        <section className='max-w-[1600px] mx-auto mt-10 p-20'>
+        <section className='max-w-[1600px] mx-auto mt-10 p-10 md:p-[60px] lg:p-20'>
 
           <About></About>
 
@@ -197,7 +198,9 @@ function App() {
 
       </main>
 
-      <footer className='max-w-[1600px] mx-auto'>
+      <footer className='max-w-[1600px] mx-auto pb-5 px-5'>
+
+        <Footer></Footer>
 
       </footer>
 
