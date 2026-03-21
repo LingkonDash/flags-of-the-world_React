@@ -1,7 +1,7 @@
 import React from 'react';
 import { Search } from 'lucide-react';
 
-const SearchBar = () => {
+const SearchBar = ({searchAction, searchClickHandler, searchBTNClickHandler}) => {
   return (
     <>
       <div className='flex justify-center items-center gap-2'>
@@ -18,10 +18,12 @@ const SearchBar = () => {
               <path d="m21 21-4.3-4.3"></path>
             </g>
           </svg>
-          <input type="search" className="grow" placeholder="Search" />
+          <input type="search" className="grow" onClick={() => searchClickHandler()} onChange={(e) => searchAction((e.target.value))} placeholder="Search" />
         </label>
 
-        <button className='btn cursor-pointer py-1 px-2 shadow-none rounded-full border-4 border-transparent hover:border-[#3075f469]'>
+        <button className='btn cursor-pointer py-1 px-2 shadow-none rounded-full border-4 border-transparent hover:border-[#3075f469]'
+                onClick={() => searchBTNClickHandler()}
+                >
           <Search className='text-[#3075f4]' />
         </button>
       </div>

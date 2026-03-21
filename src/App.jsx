@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import Navbar from './components/navbar/Navbar';
 import SortNav from './components/Sort&navigation/SortNav';
 import Flags from './components/flags/Flags';
@@ -10,6 +10,55 @@ import AboutMe from './components/bottom/AboutMe';
 
 
 function App() {
+
+  const [searchValue, setSearchvalue] = useState('');
+  const [searchData, setSearchData] = useState([]);
+
+  const [showSearch, setShowsearch] = useState(false);
+
+  const timeoutRef = useRef(null);
+
+  function searchAction(value) {
+
+    // 1. Clear previous timer
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
+    // 2. Set new timer
+    timeoutRef.current = setTimeout(() => {
+      setSearchvalue(value);
+    }, 300);
+  }
+
+  function searchClickHandler(dropdown) {
+    
+    
+    if (dropdown) {
+      setShowsearch(false);
+      return;
+    }
+    
+    setShowsearch(true);
+
+  }
+  function searchBTNClickHandler() {
+    
+    setShowsearch(false);
+
+  }
+
+  useEffect(() => {
+    fetch(`https://openapi.programming-hero.com/api/name/${searchValue}`)
+      .then(res => res.json())
+      .then(json => {
+
+        setSearchData(json.countries)
+        
+      })
+  }, [searchValue])
+
+
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true)
@@ -169,7 +218,7 @@ function App() {
     <>
 
       <header className='sticky top-0 bg-base-300 z-20'>
-        <Navbar></Navbar>
+        <Navbar searchAction={searchAction} searchData={searchData} showSearch={showSearch} searchClickHandler={searchClickHandler} searchBTNClickHandler={searchBTNClickHandler}></Navbar>
       </header>
 
       <main>
