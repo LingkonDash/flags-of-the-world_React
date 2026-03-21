@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from './components/navbar/Navbar';
 import SortNav from './components/Sort&navigation/SortNav';
 import Flags from './components/flags/Flags';
@@ -7,44 +7,54 @@ import About from './components/bottom/About';
 import Bottom from './components/bottom/Bottom';
 import Footer from './components/bottom/Footer';
 import AboutMe from './components/bottom/AboutMe';
+import SearchFallback from './components/SearchFallback';
 
 
 function App() {
-
+  
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true)
+  const [defultData, setDefultData] = useState([]);
+  const [defultDataContinent, setDefultDataContinent] = useState([]);
+  const [curSort, setCurSort] = useState('');
+  
+  // continent data
+  const [currentContinent, setCurrentContinent] = useState('');
+  
   const [searchValue, setSearchvalue] = useState('');
   const [searchData, setSearchData] = useState([]);
 
   const [showSearch, setShowsearch] = useState(false);
 
-  const timeoutRef = useRef(null);
-
   function searchAction(value) {
 
-    // 1. Clear previous timer
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
+    if (value !== '') setShowsearch(true);
+    else setShowsearch(false);
 
-    // 2. Set new timer
-    timeoutRef.current = setTimeout(() => {
-      setSearchvalue(value);
-    }, 300);
+    setSearchvalue(value);
+
   }
 
   function searchClickHandler(dropdown) {
-    
-    
+
+
     if (dropdown) {
       setShowsearch(false);
       return;
     }
-    
+
     setShowsearch(true);
 
   }
-  function searchBTNClickHandler() {
+  function searchBTNClickHandler(cca3) {
     
+    let newSearchData = searchData;
+
+    if(cca3) newSearchData = searchData.filter(obj => obj.cca3.cca3 === cca3);
+
     setShowsearch(false);
+
+    if (searchValue !== '') setData(newSearchData);
 
   }
 
@@ -54,20 +64,10 @@ function App() {
       .then(json => {
 
         setSearchData(json.countries)
-        
+
       })
   }, [searchValue])
 
-
-
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true)
-  const [defultData, setDefultData] = useState([]);
-  const [defultDataContinent, setDefultDataContinent] = useState([]);
-  const [curSort, setCurSort] = useState('');
-
-  // continent data
-  const [currentContinent, setCurrentContinent] = useState('');
 
   //handling continent function
   const handleContinent = (continentName) => {
@@ -230,7 +230,7 @@ function App() {
         <section className='max-w-[1600px] mx-auto'>
 
           {
-            loading ? <Skeleton></Skeleton> : <Flags data={data}></Flags>
+            loading ? <Skeleton></Skeleton> : data.length > 0 ? <Flags data={data}></Flags> : <SearchFallback></SearchFallback>
           }
         </section>
 

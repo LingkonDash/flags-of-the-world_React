@@ -34,7 +34,7 @@ const Navbar = ({ searchAction, searchData, showSearch, searchClickHandler, sear
         </div>
 
         <div className="navbar-end hidden md:flex justify-between items-center gap-10">
-          <SearchBar searchAction={searchAction} searchClickHandler={searchClickHandler} searchBTNClickHandler={searchBTNClickHandler} ></SearchBar>
+          <SearchBar searchAction={searchAction} searchBTNClickHandler={searchBTNClickHandler} ></SearchBar>
 
           <div className='pr-4 hidden xl:flex'>
             <Navigations ulStyle={'flex justify-between items-center gap-10 text-xl font-medium [&_li]:border-4 [&_li]:border-transparent'}></Navigations>
@@ -83,7 +83,7 @@ const Navbar = ({ searchAction, searchData, showSearch, searchClickHandler, sear
       <div className={`absolute top-0 left-1/2 w-[357px] -translate-x-1/2 flex border-4 border-t-transparent px-5 rounded-b-xl border-blue-300 flex-col bg-base-300 md:hidden justify-center items-center pb-5 pt-1 transition-transform duration-300 -z-10
                     ${dropDown ? 'translate-y-[65px]' : ' -translate-y-20 pointer-events-none'}`}>
 
-        <SearchBar searchAction={searchAction} searchClickHandler={searchClickHandler} searchBTNClickHandler={searchBTNClickHandler}></SearchBar>
+        <SearchBar searchAction={searchAction} searchBTNClickHandler={searchBTNClickHandler}></SearchBar>
 
         <div className='pr-4 md:hidden mt-5'>
           <Navigations ulStyle={'flex justify-between items-center gap-10 text-lg font-medium [&_li]:border-4 [&_li]:border-transparent'}></Navigations>
@@ -98,6 +98,7 @@ const Navbar = ({ searchAction, searchData, showSearch, searchClickHandler, sear
           searchData?.length > 0 ? (
             searchData.map(obj => (
               <div
+                onClick={() => searchBTNClickHandler(obj?.cca3?.cca3)}
                 key={obj?.cca3?.cca3}
                 className="flex items-center gap-3 px-4 py-2 hover:bg-blue-200 bg-base-200 cursor-pointer transition-colors duration-150 rounded-md"
               >
