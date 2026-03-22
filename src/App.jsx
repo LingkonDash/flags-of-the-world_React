@@ -11,16 +11,16 @@ import SearchFallback from './components/SearchFallback';
 
 
 function App() {
-  
+
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true)
   const [defultData, setDefultData] = useState([]);
   const [defultDataContinent, setDefultDataContinent] = useState([]);
   const [curSort, setCurSort] = useState('');
-  
+
   // continent data
   const [currentContinent, setCurrentContinent] = useState('');
-  
+
   const [searchValue, setSearchvalue] = useState('');
   const [searchData, setSearchData] = useState([]);
 
@@ -47,10 +47,10 @@ function App() {
 
   }
   function searchBTNClickHandler(cca3) {
-    
+
     let newSearchData = searchData;
 
-    if(cca3) newSearchData = searchData.filter(obj => obj.cca3.cca3 === cca3);
+    if (cca3) newSearchData = searchData.filter(obj => obj.cca3.cca3 === cca3);
 
     setShowsearch(false);
 
